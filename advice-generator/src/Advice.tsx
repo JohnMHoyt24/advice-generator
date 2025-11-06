@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 const Advice: React.FC = () => {
     const [button, setButton] = useState(false);
     const [quote, setQuote] = useState("");
+    const [error, setError] = useState(null);
 
     return(
         <div>
