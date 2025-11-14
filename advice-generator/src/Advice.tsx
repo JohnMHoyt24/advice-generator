@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import Divider from "./Divider";
 
 const Advice: React.FC = () => {
     interface Advice {
@@ -35,12 +35,15 @@ const Advice: React.FC = () => {
     return(
         <div>
             <div className="bg-[#4c536e] w-200 h-100 border border-hidden rounded-md p-4">
-                <p className="text-center"><span className="uppercase text-green-300 font-[Manrope] text-[12px] font-bold">Advice #{advice?.slip.id || "?"}</span></p>
+                <p className="text-center"><span className="uppercase text-green-300 font-[Manrope] text-[12px] font-bold tracking-[0.3em]">Advice #{advice?.slip.id || "?"}</span></p>
                 <p className="text-white text-center text-[25px]">"{advice?.slip.advice || "Click the button for advice"}"</p>
                 <div className="flex justify-center mt-4">
                     <button className="bg-[#007bff] text-black p-5 border rounded-md" onClick={fetchAdvice} disabled={loading}>
                         {loading ? "Loading..." : "Click!"}
                     </button>
+                </div>
+                <div>
+                    <Divider />
                 </div>
             </div>
         </div>
