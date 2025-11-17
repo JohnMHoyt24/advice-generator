@@ -37,7 +37,8 @@ const Advice: React.FC = () => {
         <div>
             <div className="bg-[#4c536e] relative w-200 h-80 border border-hidden rounded-md p-4">
                 <p className="text-center"><span className="uppercase text-green-300 font-[Manrope] text-[12px] font-bold tracking-[0.3em]">Advice #{advice?.slip.id || "?"}</span></p>
-                <p className="text-white text-center text-[25px]">"{advice?.slip.advice || "Click the button for advice"}"</p>
+                <p className="text-white text-center text-[25px] font-semibold">
+                    "{advice?.slip.advice || "Click the button for advice"}"</p>
                 <div>
                     <Divider />
                 </div>
