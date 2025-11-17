@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Divider from "./Divider";
+import Icon from "./Icon";
 
 const Advice: React.FC = () => {
     interface Advice {
@@ -34,16 +35,18 @@ const Advice: React.FC = () => {
 
     return(
         <div>
-            <div className="bg-[#4c536e] w-200 h-100 border border-hidden rounded-md p-4">
+            <div className="bg-[#4c536e] relative w-200 h-80 border border-hidden rounded-md p-4">
                 <p className="text-center"><span className="uppercase text-green-300 font-[Manrope] text-[12px] font-bold tracking-[0.3em]">Advice #{advice?.slip.id || "?"}</span></p>
                 <p className="text-white text-center text-[25px]">"{advice?.slip.advice || "Click the button for advice"}"</p>
-                <div className="flex justify-center mt-4">
-                    <button className="bg-[#007bff] text-black p-5 border rounded-md" onClick={fetchAdvice} disabled={loading}>
-                        {loading ? "Loading..." : "Click!"}
-                    </button>
-                </div>
                 <div>
                     <Divider />
+                </div>
+                <div className="flex justify-center mt-4">
+                    <button className="bg-green-400 absolute bottom-10 mt-auto hover:shadow-xl hover:shadow-green-500 text-black p-5 border border-transparent font-bold py-2 px-4
+                        rounded-full transition-all duration-300 w-16 h-16 flex items-center justify-center ml-2"
+                        onClick={fetchAdvice} disabled={loading}>
+                        <Icon />
+                    </button>
                 </div>
             </div>
         </div>
